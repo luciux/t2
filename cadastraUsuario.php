@@ -11,7 +11,7 @@
 		$_SESSION['nameC'] = $_POST['login'];
 	}
 	else{
-		$_SESSION['erro'] = 'Parece haver um erro com o login';
+		$_SESSION['erro'] = '<div id="erro">Parece haver um erro com o login</div>';
 		header('Location:index.php');
 		exit();
 	}
@@ -23,7 +23,7 @@
 		$_SESSION['keyC'] = $_POST['senha'];
 	}
 	else{
-		$_SESSION['erro'] = 'Parece haver um erro com a sua senha';
+		$_SESSION['erro'] = '<div id="erro">Parece haver um erro com a sua senha</div>';
 		header('Location:index.php');
 		exit();
 	}
@@ -32,13 +32,13 @@
 	
 	if(strlen($login) < 8){
 		
-		$_SESSION['erro'] = 'Seu login deve conter ao menos 8 caracteres';
+		$_SESSION['erro'] = '<div id="erro">Seu login deve conter ao menos 8 caracteres</div>';
 		header('Location:index.php');
 		exit();
 	}
 	if(strlen($senha) < 10){
 		
-		$_SESSION['erro'] = 'Sua senha deve conter ao menos 8 caracteres';
+		$_SESSION['erro'] = '<div id="erro">Sua senha deve conter ao menos 8 caracteres</div>';
 		header('Location:index.php');
 		exit();
 	}
@@ -49,16 +49,18 @@
 	//Insere no banco
 	
 	$query = mysql_query("INSERT INTO usuarios (login, senha) VALUES ('$login', '$senha')");
+	
 	if($query == false){
-		
-		$_SESSION['erro'] = 'Usuario indisponivel, ja cadastrado na base de dados, tente outro nome';
+		$_SESSION['erro'] = '<div id="erro">Usuario indisponivel, ja cadastrado na base de dados, tente outro nome</div>';
 		header("Location:index.php");
 		exit();
-		
 	}
+	
+	
+	//fecha conexao
 	mysql_close($conexao);
 	
-	$_SESSION['erro'] = 'Efetue login com o cadastro feito anteriormente';
+	$_SESSION['erro'] = '<div id="erro">Efetue login com o cadastro feito anteriormente</div>';
 	if(isset($_SESSION['nameC'])){
 	
 		unset($_SESSION['nameC']);

@@ -19,7 +19,7 @@
 	
 	
 	if(Mysql_num_rows($resultado) == 0){
-		$_SESSION['erro'] = 'Usuário não presente na base de dados';
+		$_SESSION['erro'] = '<div id="erro">Usuário não presente na base de dados</div>';
 		header('Location:index.php');
 		exit();
 		
@@ -37,7 +37,7 @@
 	
 	else{
 		//echo 'Usuário não cadastrado!';
-		$_SESSION['erro'] = 'Senha inválida';
+		$_SESSION['erro'] = '<div id="erro">Senha inválida</div>';
 		header('Location:index.php');
 		exit();
 	}

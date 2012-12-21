@@ -40,7 +40,7 @@
 	
 	//echo $youTube_UserFeedURL;
 	
-	echo $vagalumeLetra = 'http://www.vagalume.com.br/api/search.php?art='.$artista.'&mus='.$musica.'';
+	$vagalumeLetra = 'http://www.vagalume.com.br/api/search.php?art='.$artista.'&mus='.$musica.'&extra=artpic,alb';
 	
 	//header('Location: '.$vagalumeLetra.'');
 	
@@ -66,6 +66,9 @@
 	echo'<div id="topo"><img src="img/logo.png" /></div>';
 	echo'<div id="containerLetters">';
 	
+	//vemmm miniatura
+	echo '<img src="'.$decodeLyrics->{'art'}->{'pic_medium'}.'" alt="Foto do artista"/>';
+	
 	if(isset($decodeLyrics->{'art'}->{'name'})){
 		echo'<p><strong>Nome da banda(cantor):</strong></p>';
 		echo $decodeLyrics->{'art'}->{'name'};
@@ -74,6 +77,10 @@
 	if(isset($decodeLyrics->{'mus'}[0]->{'name'})){
 		echo'<p><strong>Nome da música:</strong></p>';
 		echo $decodeLyrics->{'mus'}[0]->{'name'};
+	}
+	if(isset($decodeLyrics->{'mus'}[0]->{'alb'}->{'name'})){
+		echo'<p><strong>Nome do album:</strong></p>';
+		echo $decodeLyrics->{'mus'}[0]->{'alb'}->{'name'};
 	}
 	else{
 		echo'Sem traducao';
@@ -85,8 +92,10 @@
 		echo $decodeLyrics->{'mus'}[0]->{'text'};
 	}
 	
-	if(isset($decodeLyrics->{'mus'}[0]->{'translate'})){
-		echo $decodeLyrics->{'mus'}[0]->{'translate'};
+	echo'<p><strong>Tradução:</strong></p>';
+	
+	if(isset($decodeLyrics->{'mus'}[0]->{'translate'}[0]->{'text'})){
+		echo $decodeLyrics->{'mus'}[0]->{'translate'}[0]->{'text'};
 	}
 	
 	else{
@@ -95,9 +104,6 @@
 	}
 	echo '</div>';
 	//var_dump($decodeLyrics);
-	
-	
-	
 	
 	//$lyrics = changeToUtf($lyrics); // para substituir os codigos malucos por acentos
 	

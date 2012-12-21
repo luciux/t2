@@ -35,7 +35,7 @@
 
 		
 		echo'<div id="socialNetworks">';
-		echo'<iframe src="http://www.facebook.com/plugins/like.php?href=suaurl&layout=standard&<br>
+		echo'<iframe src="http://www.facebook.com/plugins/like.php?href=http://lucianojr.my.phpcloud.com/t3/&layout=standard&<br>
 show_faces=false&width=380&action=like&colorscheme=light&height=25&locale=pt_BR" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:25px;" allowTransparency="true"></iframe>';
 		echo'<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="SeuTwitter" rel="nofollow">Tweet</a>';
 	

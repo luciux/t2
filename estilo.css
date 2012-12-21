@@ -1,25 +1,55 @@
 body{
 	margin:0 0 0 0;
-	background-color:#CCCCCC;
+	background-color:#fbfbfb;
 	color:#333333;
 	font-size:13px;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 }
 
 #topo{
-	background-color:#F7F7F7;
+	background-color:#f1f1f1;
 	width:100%;
 	height:60px;
-	border-bottom:2px solid #999999;
+	border-bottom:2px solid #e8e8e8;
 	position:absolute;
+	top:0px;
 }
+a{
+	color:#666666;
+	margin-right:5px;
+	margin-top:15px;
+	font-size:19px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-decoration:none;
+}
+
+#erro{
+	background-color:#CCCCCC;
+	width:400px;
+	height:20px;
+	padding-left:5px;
+	padding-right:5px;
+	top:60%;
+	color:#FFFFFF;
+	left:50%;
+	margin-left:-200px;
+	position:absolute;
+	
+	
+
+}
+
 #boxHome{
 	background-color:#f8f8f8;
-	width:900px;
+	width:1000px;
 	height:220px;
 	left:50%;
-	top:30%;
-	margin-left:-450px;
+	color:#333333;
+	font-weight:bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	top:20%;
+	font-size:14px;
+	margin-left:-500px;
 	position:absolute;
 }
 #boxSignup{
@@ -27,7 +57,7 @@ body{
 	width:450px;
 	height:400px;
 	float:left;
-	margin-left:0px;
+	margin-left:20px;
 	
 }
 #boxLogin{
@@ -35,24 +65,26 @@ body{
 	width:450px;
 	height:400px;
 	float:left;
-	margin-left:0px;
+	margin-left:80px;
 	
 }
 
 #boxSignup form input{
 	background-color:#f3f2f2;
 	font-size:18px;
+	width:100%;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	color:#999999;
 	-webkit-border-radius: 30px;
     -moz-border-radius: 10px;
 	border-radius:10px;  
 }
+
 #boxSignup form input:hover{
-	background-color:#EEEEEE;
+	background-color:#fff;
 }
 #boxLogin form input:hover{
-	background-color:#EEEEEE;
+	background-color:#fff;
 }
 #boxLogin form input{
 	background-color:#f3f2f2;
@@ -62,6 +94,8 @@ body{
 	-webkit-border-radius: 30px;
     -moz-border-radius: 10px;
     border-radius: 10px;  
+	width:95%;
+
 }
 
 form input{
@@ -76,7 +110,6 @@ form input{
 	top:240px;
 	left:50%;
 	margin-left:-300px;
-	
 }
 
 #containerLetters{
@@ -97,6 +130,16 @@ form input{
 	top:100px;
 	margin-left:-177px;;
 	position:absolute;
+}
+
+#centralSearch form input:hover{
+	background-color:#fff;
+}
+#centralSearch form input{
+	-webkit-border-radius: 30px;
+    -moz-border-radius: 10px;
+	border-radius:10px;
+	background-color:#f3f2f2;
 }
 
 #socialNetworks{
@@ -135,7 +178,7 @@ form input{
 	left:50%;
 	margin-left:-100px;
 	position:absolute;
-	width:200px;
+	width:150px;
 	margin-top:10px;
 
 }
