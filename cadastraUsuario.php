@@ -48,8 +48,14 @@
 	
 	//Insere no banco
 	
-	$query = mysql_query("INSERT INTO usuarios (login, senha) VALUES ('$login', '$senha')") or die(mysql_error()); // colocar um if para jogar a inder
-	//fecha conexao
+	$query = mysql_query("INSERT INTO usuarios (login, senha) VALUES ('$login', '$senha')");
+	if($query == false){
+		
+		$_SESSION['erro'] = 'Usuario indisponivel, ja cadastrado na base de dados, tente outro nome';
+		header("Location:index.php");
+		exit();
+		
+	}
 	mysql_close($conexao);
 	
 	$_SESSION['erro'] = 'Efetue login com o cadastro feito anteriormente';

@@ -1,7 +1,7 @@
 <?php
  
 	//nome do servidor (localhost)
-	$servidor = "lucianojr.my.phpcloud.com";
+	$servidor = "lucianojr-db.my.phpcloud.com:3306";
  
 	//usuario do banco de dados
 	$user = "lucianojr";
@@ -10,7 +10,7 @@
 	$senha = "lostpatience";
  
 	//nome da base de dados
-	$db = "trampo2";
+	$db = "lucianojr";
  
 	//executa a conexao com o banco, caso contrario mostra o erro ocorrido
 	$conexao = mysql_connect($servidor,$user,$senha) or die (mysql_error());
